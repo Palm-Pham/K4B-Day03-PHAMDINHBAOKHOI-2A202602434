@@ -1,0 +1,37 @@
+[
+  {
+    "id": "TC01",
+    "type": "direct_query",
+    "question": "Chào bạn, vì sao cần khởi động trước khi tập gym?",
+    "expected_behavior": "Trả lời trực tiếp bằng kiến thức chung về tập luyện, không gọi công cụ.",
+    "complexity": "Low"
+  },
+  {
+    "id": "TC02",
+    "type": "single_tool_query",
+    "question": "Hãy tìm hướng dẫn bài Bench Press cho nhóm cơ ngực trên kênh SmallGym.",
+    "expected_behavior": "Agent gọi search_smallgym_exercises với muscle_group là 'ngực' và exercise_name là 'Bench Press'. Sau khi nhận Observation, cung cấp đường dẫn tìm kiếm từ công cụ, không khẳng định đó là video cụ thể đã được xác minh.",
+    "complexity": "Medium"
+  },
+  {
+    "id": "TC03",
+    "type": "appointment_booking",
+    "question": "Hãy đặt lịch tập Ngực - Tay sau lúc 06:30 ngày 15/09/2026.",
+    "expected_behavior": "Agent gọi schedule_workout_session với datetime_str là '06:30 15/09/2026' và target_muscle là 'Ngực - Tay sau'. Sau khi nhận status 'success', thông báo đặt lịch mô phỏng thành công, không khẳng định đã tạo sự kiện Google Calendar.",
+    "complexity": "Medium"
+  },
+  {
+    "id": "TC04",
+    "type": "multi_step_reasoning",
+    "question": "Hãy tìm hướng dẫn Squat cho nhóm cơ chân trên SmallGym, sau đó đặt lịch tập chân lúc 07:00 ngày 16/09/2026. Cuối cùng, gửi tôi đường dẫn tìm kiếm và kết quả đặt lịch.",
+    "expected_behavior": "Agent gọi search_smallgym_exercises với muscle_group là 'chân' và exercise_name là 'Squat'. Sau khi nhận Observation, tiếp tục gọi schedule_workout_session với datetime_str là '07:00 16/09/2026' và target_muscle là 'chân'. Kết luận dựa trên cả hai Observation, nêu rõ lịch chỉ được mô phỏng và đường dẫn là kết quả tìm kiếm.",
+    "complexity": "High"
+  },
+  {
+    "id": "TC05",
+    "type": "edge_case_handling",
+    "question": "Hãy đặt lịch tập vai lúc 18:00 ngày 15/09/2026.",
+    "expected_behavior": "Agent giải thích giờ yêu cầu nằm ngoài khung 05:30–14:00 và đề nghị người dùng chọn giờ hợp lệ, không tự đổi giờ hoặc thông báo thành công. Nếu gọi schedule_workout_session, phải truyền đúng thời gian được yêu cầu và xử lý status 'failed' từ Observation.",
+    "complexity": "Medium"
+  }
+]

@@ -1,8 +1,8 @@
 # 📊 BÁO CÁO THU HOẠCH NGHIỆM THU BÀI LAB 3 (BƯỚC 3 — SUBMISSION ARTIFACT)
 
-> **Họ và Tên Học viên:** [Điền Họ và Tên]  
-> **Mã Sinh Viên / Mã Học viên:** [Điền MSSV]  
-> **Chủ đề Lựa chọn:** [Điền tên chủ đề đã chọn từ docs/DANH_SACH_DE_TAI.md hoặc Đề tài Mở]  
+> **Họ và Tên Học viên:** [PHAM DINH BAO KHOI]  
+> **Mã Sinh Viên / Mã Học viên:** [2A202602434]  
+> **Chủ đề Lựa chọn:** [Trợ lý đặt lịch tập Gym]  
 
 ---
 
@@ -10,11 +10,12 @@
 
 | Tiêu chí Đánh giá | Mức độ (1 - 5) | Giải trình chi tiết lý do chọn điểm |
 | :--- | :---: | :--- |
-| **1. Multi-step Reasoning** | / 5 | Bài toán có yêu cầu chia nhỏ nhiều bước suy luận nối tiếp nhau không? |
-| **2. Tool Interaction** | / 5 | Hệ thống có cần kết nối với MCP Server / Cơ sở dữ liệu bên ngoài không? |
-| **3. Dynamic Decision** | / 5 | Bước tiếp theo có phụ thuộc vào kết quả quan sát bước trước không? |
-| **4. Long Horizon Goal** | / 5 | Hệ thống có phải giữ mục tiêu xuyên suốt qua nhiều lượt xử lý không? |
-| **TỔNG ĐIỂM AGENTIC FIT** | **/ 20** | *Nếu tổng điểm > 12/20: Bài toán rất phù hợp triển khai Agentic System.* |
+| **1. Multi-step Reasoning** | 4/ 5 | có yêu cầu chia nhỏ nhiều bước suy luận nối tiếp nhau 
+: (1) Nhận diện nhóm cơ/mục tiêu buổi tập từ người dùng, (2) Kiểm tra ràng buộc khung giờ hợp lệ của gói tập (chỉ cho phép từ 5h30 đến 14h00), (3) Xác định từ khóa kỹ thuật chuẩn để tìm bài tập tương ứng, (4) Ghép nối thời gian đặt lịch cá nhân và tổng hợp video hướng dẫn từ kênh chỉ định. |
+| **2. Tool Interaction** | 4 / 5 | Hệ thống cần kết nối với MCP Server / Cơ sở dữ liệu bên ngoài: Calendar API (Google Calendar) để kiểm tra lịch rảnh và tạo sự kiện tập luyện, (2) YouTube Data API / Search Tool (truy vấn lọc bài tập chính xác theo Channel ID của kênh SmallGym) |
+| **3. Dynamic Decision** | 4 / 5 | Bước tiếp theo có phụ thuộc vào kết quả quan sát bước trước: nếu tìm kiếm video bài tập theo yêu cầu chưa khớp trên kênh SmallGym -> tự động phân tích từ khóa bài tập thay thế/biến thể liên quan cùng nhóm cơ trên web. |
+| **4. Long Horizon Goal** | 3 / 5 | Hệ thống phải giữ mục tiêu xuyên suốt qua nhiều lượt xử lý: Mục tiêu trải qua nhiều bước tương tác hội thoại: Từ tiếp nhận yêu cầu nhóm cơ và giờ tập -> xác thực khung giờ -> tìm kiếm/đính kèm link video SmallGym -> thêm lịch vào Calendar -> gửi thông báo xác nhận hoàn tất buổi tập. |
+| **TỔNG ĐIỂM AGENTIC FIT** | **15 / 20** | *Nếu tổng điểm > 12/20: Bài toán rất phù hợp triển khai Agentic System.* |
 
 ---
 
